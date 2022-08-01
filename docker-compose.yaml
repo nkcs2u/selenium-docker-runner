@@ -9,13 +9,12 @@ services:
     environment:
       - HUB_HOST=hub
   search-module:
-    image: vinsdocker/selenium-docker
+    image: nkcs2u/selenium-docker
     depends_on:
       - chrome
-      - firefox
     environment:
       - HUB_HOST=hub
-      - BROWSER=firefox
+      - BROWSER=chrome
       - MODULE=search-module.xml
     volumes:
       - ./output/search-result:/usr/share/udemy/test-output
